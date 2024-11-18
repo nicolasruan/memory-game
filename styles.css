@@ -32,6 +32,16 @@ body {
     gap: 20px;
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 10px; /* Adjust spacing between buttons */
+    width: 90vw; /* The grid width is 90% of the viewport width */
+    max-width: 500px; /* Optional: limit the maximum width for larger screens */
+    margin: 0 auto; /* Center the grid */
+}
+
+
 
 .button-link {
     display: flex;
@@ -54,31 +64,18 @@ body {
     background-color: #111;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-    grid-template-rows: repeat(3, 1fr); /* 3 equal rows */
-    gap: 10px; /* Adjust spacing between buttons */
-    max-width: 400px; /* Optional max width for scaling */
-    width: 100%; /* Ensure it scales with the container */
-    aspect-ratio: 1 / 1; /* Keeps the grid square overall */
-    margin: auto;
-}
-
 .button-link2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: #555;
     border: none;
     border-radius: 10px;
     color: #fff;
     font-size: 1.2em;
-    text-decoration: none;
+    text-align: center;
     transition: background-color 0.5s ease;
-    aspect-ratio: 1 / 1; /* Ensures buttons stay square */
-    width: 100%; /* Scales button to fit grid cell */
-    height: auto; /* Maintains square aspect ratio */
+
+    /* Responsive sizing */
+    width: 100%; /* Take up full width of the grid cell */
+    aspect-ratio: 1 / 1; /* Ensures the button remains square */
 }
 
 .button-link2:hover, .button-link2.pressed {

@@ -58,7 +58,7 @@ function setupGrid() {
     let gridContainer = document.getElementById("grid-container");
     gridContainer.innerHTML = ""; // Clear existing buttons if any
     
-    const numpadOrder = [7, 8, 9, 4, 5, 6, 1, 2, 3];
+    const numpadOrder = [7, 8, 9, 4, 5, 6, 1, 2, 3]; // Numpad-style layout
 
     for (let i = 0; i < numpadOrder.length; i++) {
         let button = document.createElement("button");
@@ -68,8 +68,9 @@ function setupGrid() {
         gridContainer.appendChild(button);
     }
 
+    gridContainer.classList.add("grid-container"); // Ensure correct styling
     document.getElementById("sequence-container").innerHTML = "";
-    gridContainer.style.display = "flex";
+    gridContainer.style.display = "grid";
 }
 
 function buttonClicked(num) {
