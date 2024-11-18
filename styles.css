@@ -32,12 +32,6 @@ body {
     gap: 20px;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns */
-    gap: 20px;
-    max-width: 600px; /* Max width to prevent buttons from getting too large */
-}
 
 .button-link {
     display: flex;
@@ -60,10 +54,19 @@ body {
     background-color: #111;
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    grid-template-rows: repeat(3, 1fr); /* 3 equal rows */
+    gap: 10px; /* Adjust spacing between buttons */
+    max-width: 400px; /* Optional max width for scaling */
+    width: 100%; /* Ensure it scales with the container */
+    aspect-ratio: 1 / 1; /* Keeps the grid square overall */
+    margin: auto;
+}
+
 .button-link2 {
     display: flex;
-    width: 10vw;
-    height: 10vw;
     justify-content: center;
     align-items: center;
     background-color: #555;
@@ -72,10 +75,10 @@ body {
     color: #fff;
     font-size: 1.2em;
     text-decoration: none;
-    background-size: cover;
-    background-position: center;
     transition: background-color 0.5s ease;
-    aspect-ratio: 1 / 1; /* Makes the buttons square */
+    aspect-ratio: 1 / 1; /* Ensures buttons stay square */
+    width: 100%; /* Scales button to fit grid cell */
+    height: auto; /* Maintains square aspect ratio */
 }
 
 .button-link2:hover, .button-link2.pressed {
