@@ -1,0 +1,159 @@
+body {
+    background-color: #111;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+#body-concentratie {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 35vw; /* Adjusted width */
+    justify-content: center;
+    gap: 20px;
+}
+
+.button-container-index {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80vw; /* Adjusted width */
+    justify-content: center;
+    gap: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px;
+    max-width: 600px; /* Max width to prevent buttons from getting too large */
+}
+
+.button-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    height: 20vw;
+    background-color: #555;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1.2em;
+    text-decoration: none;
+    background-size: cover;
+    background-position: center;
+	transition: background-color 0.5s ease;
+}
+
+.button-link:hover {
+    background-color: #111;
+}
+
+.button-link2 {
+    display: flex;
+    width: 10vw;
+    height: 10vw;
+    justify-content: center;
+    align-items: center;
+    background-color: #555;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1.2em;
+    text-decoration: none;
+    background-size: cover;
+    background-position: center;
+    transition: background-color 0.5s ease;
+    aspect-ratio: 1 / 1; /* Makes the buttons square */
+}
+
+.button-link2:hover, .button-link2.pressed {
+    background-color: #999;
+}
+
+#button-container {
+	max-width: 400px;
+	margin: 0 auto;
+	}
+
+#start-button, #settings-button, #save-settings, #cancel-settings {
+	padding: 10px 20px;
+	font-size: 14px;
+	margin-top: 10px;
+	cursor: pointer;
+	border: 1px solid #333;
+	border-radius: 5px;
+	background-color: #fff;
+	margin-bottom: 20px;
+    transition: background-color 0.5s ease;
+}
+
+#button-container *:hover {
+	background-color: #333;
+    color: #fff;
+}
+
+#settings-menu button:hover {
+	background-color: #333;
+    color: #fff;
+}
+
+#sequence-container {
+	font-size: 60pt;
+	text-align: center;
+}
+
+#score-container{
+	padding: 10px;
+}
+
+#number-container {
+	font-size: 60pt;
+	text-align: center;
+}
+
+#next-button {
+	padding: 10px 20px;
+	font-size: 14px;
+	margin-top: 10px;
+	cursor: pointer;
+	border: 1px solid #333;
+	border-radius: 5px;
+	background-color: #fff;
+	margin-bottom: 20px;
+}
+
+.choice-button {
+	flex-grow: 1;
+	max-width: calc(33% - 10px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 4vw;
+	height: 4vw;
+	background-color: #555;
+	border: none;
+	border-radius: 10px;
+	color: white;
+	font-size: 1.1em;
+	text-decoration: none;
+	background-size: cover;
+	background-color: #333; 
+	background-position: center;
+	transition: background-color 0.5s ease;
+}
+
+.choice-button:hover{
+	background-color: #777; /* Dark mode button hover background */
+}
