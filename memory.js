@@ -2,6 +2,7 @@ let can_start = true;
 let current_sequence = [];
 let current_index = 0;
 let score = 0;
+let input_sequence = [];
 
 let sequence_length = 5;
 
@@ -11,11 +12,14 @@ function startGame() {
     current_sequence = generateSequence(sequence_length);
     current_index = 0;
     score = 0;
+    input_sequence = []; 
 
     document.getElementById("score-container").innerHTML = "";
     document.getElementById("grid-container").style.display = "none";
     document.getElementById("game-head").style.display = "none";
     document.getElementById("button-container").style.display = "none";
+    document.getElementById("input-container").innerHTML = "";
+    document.getElementById("solution-container").innerHTML = "";
 
     // Display sequence to user
     displaySequence();
@@ -74,6 +78,8 @@ function setupGrid() {
 }
 
 function buttonClicked(num) {
+    input_sequence.push(num.toString())
+    document.getElementById("input-container").innerHTML = input_sequence.join("");
     if (num === current_sequence[current_index]) {
         score++;
     }
@@ -93,6 +99,19 @@ function endGame() {
     document.getElementById("game-head").style.display = "inline";
     document.getElementById("button-container").style.display = "inline";
     document.getElementById("start-button").innerHTML = "Start";
+    document.getElementById("solution-container").innerHTML = current_sequence.map(num => `<span>${num}</span>`).join("");;
+    document.getElementById("input-container").innerHTML = input_sequence
+    .map((num, index) => {
+        num = parseInt(num);
+        if (num === current_sequence[index]) {
+            console.log(num, " ok");
+            return `<span>${num}</span>`; // Matching digits
+        } else {
+            console.log(num, "nok");
+            return `<span style="color: red;">${num}</span>`; // Mismatched digits
+        }
+    })
+    .join("");
     if (score === sequence_length) {
         // sequence_length++;
         // document.getElementById("start-button").innerHTML = `Start level ${sequence_length}`;
