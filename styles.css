@@ -1,6 +1,20 @@
+:root{
+    --gray: #4b4b4b;
+    --white: #fff;
+    --red: #ff5722;
+    --blue: #4facfe;
+    --green: #2ce49d;
+    --gray2: #333;
+    --white2: #f4f4f9; 
+    --blue2: #00f2fe; 
+    --red2: #e64a19; 
+    --red3: #faaca8;
+    --purple: #afa2d8; 
+}
+
 body {
-    background-color: #111;
-    color: #fff;
+    background-color: var(--white2);
+    color: var(--gray2);
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
@@ -16,13 +30,6 @@ body {
     height: 100vh;
 }
 
-.button-container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 35vw; /* Adjusted width */
-    justify-content: center;
-    gap: 20px;
-}
 
 .button-container-index {
     display: flex;
@@ -42,6 +49,36 @@ body {
 }
 
 
+@keyframes gradient-move {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+#game-head {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    background-image: linear-gradient(to right, #e78528, #ae00fe, #e78528);
+    color: transparent;
+    background-clip: text;
+    background-size: 200%; /* Allows the gradient to have space to move */
+    animation: gradient-move 3s linear infinite, fade-in 5s ease-out forwards; /* Combine animations */
+    opacity: 0; /* Initial state */
+}
+
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 
 .button-link {
     display: flex;
@@ -52,61 +89,104 @@ body {
     background-color: #555;
     border: none;
     border-radius: 10px;
-    color: #fff;
+    color: var(--white2);
     font-size: 1.2em;
     text-decoration: none;
     background-size: cover;
     background-position: center;
-	transition: background-color 0.5s ease;
+	transition: 0.5s ease;
 }
 
 .button-link:hover {
-    background-color: #111;
+    background-color: var(--blue);
+    background-position: right center;
 }
 
 .button-link2 {
-    background-color: #555;
+    background-image: linear-gradient(to right, #94d8ff,  #48cff8 55%, #bb91ff 100%);
+    background-size: 200% auto;
     border: none;
     border-radius: 10px;
-    color: #fff;
-    font-size: 1.2em;
+    color: var(--white2);
+    font-size: 1.7em;
     text-align: center;
-    transition: background-color 0.5s ease;
-
+    transition: 0.5s ease;
+    animation: fade-in 1s ease-in forwards; /* Combine animations */
+    opacity: 0; /* Initial state */
     /* Responsive sizing */
     width: 100%; /* Take up full width of the grid cell */
     aspect-ratio: 1 / 1; /* Ensures the button remains square */
 }
 
 .button-link2:hover, .button-link2.pressed {
-    background-color: #999;
+    background-color: var(--blue);
+    background-position: right center;
+    font-size: 2em;
 }
 
 #button-container {
 	max-width: 400px;
 	margin: 0 auto;
-	}
-
-#start-button, #settings-button, #save-settings, #cancel-settings {
-	padding: 10px 20px;
-	font-size: 14px;
-	margin-top: 10px;
-	cursor: pointer;
-	border: 1px solid #333;
-	border-radius: 5px;
-	background-color: #fff;
-	margin-bottom: 20px;
-    transition: background-color 0.5s ease;
 }
+
+#start-button, #settings-button, #next-button, #save-settings, #cancel-settings {
+	padding: 2% 2%;
+    width: 8em;
+	font-size: 1.8em;
+	margin-top: 2%;
+	cursor: pointer;
+    border: none;
+	border-radius: 5px;
+    background-image: linear-gradient(to right, var(--blue), var(--purple)  55%, var(--blue)  100%);
+    background-size: 200% auto;
+    color: var(--white);
+	margin-bottom: 2%;
+    transition: 0.5s ease; 
+}
+
+
+#input-container {
+    font-size: 2em;
+    margin-top: 0.5em;
+    background-clip: text;
+}
+
+#solution-container {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    background-clip: text;
+}
+
+
+
+.shining {
+    background-image: linear-gradient(to right, #ffe920,  var(--green) 55%,  #bb91ff 100%);
+    background-size: 200% auto;
+    animation: gradient-move 2s infinite;
+    background-clip: text;
+    color: transparent;
+}
+
 
 #button-container *:hover {
-	background-color: #333;
-    color: #fff;
+    background-color: var(--blue);
+    background-position: right center;
 }
 
-#settings-menu button:hover {
-	background-color: #333;
-    color: #fff;
+
+#settings-menu {
+    max-width: 600px;
+}
+
+#settings-menu h2{
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    background-image: linear-gradient(to right, #4facfe, #00f2fe, #4facfe);
+    color: transparent;
+    background-clip: text;
+    background-size: 200%; /* Allows the gradient to have space to move */
+    animation: gradient-move 3s linear infinite; /* Adjust timing and smoothness */
+
 }
 
 #sequence-container {
@@ -115,6 +195,8 @@ body {
 }
 
 #score-container{
+    font-size: 2.5em;
+    margin-top: 0.5em;
 	padding: 10px;
 }
 
@@ -123,16 +205,6 @@ body {
 	text-align: center;
 }
 
-#next-button {
-	padding: 10px 20px;
-	font-size: 14px;
-	margin-top: 10px;
-	cursor: pointer;
-	border: 1px solid #333;
-	border-radius: 5px;
-	background-color: #fff;
-	margin-bottom: 20px;
-}
 
 .choice-button {
 	flex-grow: 1;
